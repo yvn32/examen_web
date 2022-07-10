@@ -6,8 +6,13 @@ from django.contrib import messages
 
 # PÁGINA DE INICIO
 def inicio(request):
-    msje = ""
-    contexto = {"msje":msje}
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
+    contexto = {"usuarioLogueado":usuarioLogueado}
     return render(request, "index.html",contexto)
 
 # REGISTRO DE USUARIO
@@ -18,6 +23,7 @@ def registro(request):
     msje = ""
     usuarios = []
     existe = 0
+    usuarioLogueado = ""
     try:
         user = request.GET["r_correo"]
         pwd = request.GET["r_password"]
@@ -47,7 +53,8 @@ def registro(request):
     except:
         msje = f'Los datos ingresados son inválidos, por favor intente nuevamente'
         print(msje)
-    return render(request, "registro.html")
+    contexto = {"usuarioLogueado":usuarioLogueado}
+    return render(request, "registro.html",contexto)
 
 # LOGIN DE USUARIO
 def login(request):
@@ -56,6 +63,8 @@ def login(request):
     mensaje = ""
     usuarios = []
     loguear = False
+    usuarioLogueado = ""
+
     try:
         user = request.GET["correo"]
         pwd = request.GET["password"]
@@ -70,20 +79,45 @@ def login(request):
             request.session['usuarioLogueado'] = user
         else:
             messages.success(request, 'Los datos ingresados son inválidos, por favor intente nuevamente')
+
     except:
         mensaje = f'Los datos ingresados son inválidos, por favor intente nuevamente'      
-    contexto = {'mensaje':mensaje,
-                'user':user}
+    
+    contexto = {"mensaje":mensaje,
+                "user":user,
+                "usuarioLogueado":usuarioLogueado}
     return render(request, "login.html", contexto)
+
+# DESLOGUEAR USUARIO
+def salir(request):
+    usuarioLogueado = ""
+    request.session['usuarioLogueado'] = ""
+    usuarioLogueado = request.session['usuarioLogueado']
+    contexto = {"usuarioLogueado":usuarioLogueado}
+    return redirect('/login',contexto)
 
 # MANTENEDOR GENERAL
 def mantenedor(request):
-    return render(request, "mantenedor.html")
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
+    contexto = {"usuarioLogueado":usuarioLogueado}
+    return render(request, "mantenedor.html",contexto)
 
 # MANTENEDOR DE USUARIO
 def mantenedorUsuarios(request):
     usuarios = usuario.objects.all()
-    contexto = {'usuarios': usuarios}
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
+    contexto = {"usuarioLogueado":usuarioLogueado,
+                "usuarios": usuarios}
     return render(request, "mantenedorUsuarios.html", contexto)
 
 # ELIMINAR USUARIO
@@ -96,8 +130,20 @@ def eliminarUsuario(request, id):
 def editarUsuario(request, id):
     espacios = 0
     usuarioEditar = usuario.objects.get(id=id)
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
     try:
         pwd = request.GET["e_password"]
+        print(pwd)
+        try:
+            suscripcion = str(request.GET["e_suscripcion"])
+        except:
+            suscripcion = 0
+        print(suscripcion)
         for i in pwd:
             if i == " ":
                 espacios += 1
@@ -107,17 +153,26 @@ def editarUsuario(request, id):
             messages.success(request, 'Por favor elimine los espacios')
         else:
             usuarioEditar.password = pwd
+            usuarioEditar.suscripcion = suscripcion
             usuarioEditar.save()
             messages.success(request, 'Usuario modificado')
     except:
         print("Error")
-    contexto = {"usuarioEditar":usuarioEditar}
+    contexto = {"usuarioEditar":usuarioEditar,
+                "usuarioLogueado":usuarioLogueado}
     return render(request, "editarUsuario.html", contexto)
 
 # MANTENEDOR DE PRODUCTO
 def mantenedorProductos(request):
     productos = producto.objects.all()
-    contexto = {'productos': productos}
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
+    contexto = {'productos': productos,
+                "usuarioLogueado":usuarioLogueado}
     return render(request, "mantenedorProductos.html", contexto)
 
 # ELIMINAR PRODUCTO
@@ -128,37 +183,65 @@ def eliminarProducto(request, id):
 
 # PÁGINA DE PRODUCTOS
 def productos(request):
-    usuarioLogueado = request.session['usuarioLogueado']
-    print(usuarioLogueado)
-    mensaje = ""
+    usuarioLogueado = ""
     llamadabd = []
-    try:
-        llamadabd = usuario.objects.get(nombreUsuario=usuarioLogueado)
-        print(llamadabd.nombreUsuario)
-        print(llamadabd.password)
-        print(llamadabd.suscripcion)
-    except:
-        print('Caí en el except de página de productos') 
     productos = producto.objects.all()
-    contexto = {'datos': productos,
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        if usuarioLogueado != "":
+            print(usuarioLogueado)
+            llamadabd = usuario.objects.get(nombreUsuario=usuarioLogueado) 
+    except:
+        request.session['usuarioLogueado'] = ""
+        usuarioLogueado = ""
+        print('No pasa nada')
+
+    contexto = {'productos': productos,
                 'llamadabd':llamadabd,
-                'mensaje':mensaje,
                 'usuarioLogueado':usuarioLogueado}
     return render(request, "productos.html", contexto)
 
 # PÁGINA DE SEGUIMIENTO
 def seguimiento(request):
-    return render(request, "seguimiento.html")
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
+    contexto = {"usuarioLogueado":usuarioLogueado}
+    return render(request, "seguimiento.html",contexto)
 
 # PÁGINA DE DONACIONES
 def donacion(request):
-    return render(request, "donacion.html")
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
+    contexto = {"usuarioLogueado":usuarioLogueado}
+    return render(request, "donacion.html",contexto)
 
 # PÁGINA DE CARRITO DE COMPRA
 def carritoCompra(request):
-    return render(request, "carritoCompra.html")
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
+    contexto = {"usuarioLogueado":usuarioLogueado}
+    return render(request, "carritoCompra.html",contexto)
 
 # PLANTILLA CON NAVBAR Y FOOTER
 def plantilla(request):
-    return render(request, "plantilla.html")
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
+    contexto = {"usuarioLogueado":usuarioLogueado}
+    return render(request, "plantilla.html",contexto)
 
