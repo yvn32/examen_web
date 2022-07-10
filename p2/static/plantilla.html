@@ -45,22 +45,20 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'mantenedor' %}">Mantenedor</a>
                 </li>
-    
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Encuentra tu planta" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
                 
-
                 {% if usuarioLogueado == ""  %}               
                 <!-- *** Botón para registro de usuarios *** -->
                 <form class="d-flex" id="registrar" action="/registro">
                   <button type="submit" class="btn btn-secondary" style="margin-left: 7px; color: #E76F51; background-color: white; border-color: #E76F51;">Registrarme</button>
                 </form>             
-                {% else %}                
+                {% else %}   
+                <!-- Mostrar usuario logueado -->                             
                 <form class="d-flex" id="" action="">
-                <!-- Mostrar usuario logueado -->
-                  <button type="btn" class="btn btn-secondary" style="margin-left: 7px; color: #2A9D8F; background-color: white; border-color: #2A9D8F;">{{ usuarioLogueado }}</button>
+                  <button type="btn" class="btn btn-secondary" style="margin-left: 7px; color: #2A9D8F; background-color: white; border-color: #2A9D8F;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                    {{ usuarioLogueado }}</button>
                 </form>                 
                 {% endif %}
 

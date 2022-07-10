@@ -13,26 +13,42 @@
             <h4 class="w-100" style="text-align: center; margin-bottom: 20px;">
                 {{ usuarioEditar.nombreUsuario }}
             </h4>
-            <form class="d-flex flex-column" style="margin-bottom: 20px;" method="GET">
-              
-              <label for="exampleInputPassword1" class="form-label">Nueva password</label>
-              <input type="password" name="e_password" class="form-control" id="exampleInputPassword1" placeholder= "{{usuarioEditar.Password}}" style="margin-bottom: 10px">
 
-              <div>
-                <input class="form-check-input" type="radio" name="e_suscripcion" id="exampleRadios1" value="1" style="margin-bottom: 20px;">
-                <label class="form-check-label" for="exampleRadios1">Suscribir / Desuscribir</label>
-              </div>
-
+            <h6>
               {% for m in messages %}
               <div style="text-align: center; margin-bottom: 15px;">
                 {{ m }}
               </div>
               {% endfor %}
+            </h6>
+
+            <!-- Formulario 1 -->
+            <form class="d-flex flex-column" style="margin-bottom: 20px;" method="GET">
               
-              <button id="boton_editar" type="submit" class="btn" style="background-color: #2A9D8F; color: white; margin-bottom: 15px;">Confirmar edición</button>
+              <label for="exampleInputPassword1" class="form-label">Cambiar password</label>
+              <input type="password" name="e_password" class="form-control" id="exampleInputPassword1" placeholder= "Nueva password" style="margin-bottom: 10px">
+
+              <button id="boton_editar" type="submit" class="btn" style="background-color: #2A9D8F; color: white; margin-bottom: 10px;">Confirmar edición</button>
+              <button id="boton_cancelar" type="reset" class="btn" style="background-color: #264653; color: white;">Cancelar</button>            
+            </form>
+
+            <!-- Formulario 2 -->
+            <form class="d-flex flex-column" style="margin-bottom: 20px;" method="GET">
+
+              <div>
+                <input class="form-check-input" type="radio" name="e_suscripcion" id="exampleRadios1" value="1" style="margin-bottom: 10px;">
+                <label class="form-check-label" for="exampleRadios1">Suscribir</label>
+              </div>
+              <div>
+                <input class="form-check-input" type="radio" name="e_suscripcion" id="exampleRadios1" value="0" style="margin-bottom: 10px;">
+                <label class="form-check-label" for="exampleRadios1">Cancelar suscripción</label>
+              </div>
+              
+              <button id="boton_editar" type="submit" class="btn" style="background-color: #2A9D8F; color: white; margin-bottom: 10px;">Confirmar edición</button>
               <button id="boton_cancelar" type="reset" class="btn" style="background-color: #264653; color: white; margin-bottom: 15px;">Cancelar</button>            
             </form>
 
+            <!-- Formulario 3 -->
             <form action="/mantenedorUsuarios">
                 <button id="boton_cancelar" class="btn" style="background-color: #E76F51;; color: white;">Volver a mantenedor de usuarios</button>
             </form>

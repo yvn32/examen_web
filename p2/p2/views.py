@@ -64,6 +64,7 @@ def login(request):
     usuarios = []
     loguear = False
     usuarioLogueado = ""
+    usuarioLoguear = []
 
     try:
         user = request.GET["correo"]
@@ -75,8 +76,12 @@ def login(request):
                     if p.password == pwd:
                         loguear = True
         if loguear == True:
-            messages.success(request, f'Ha iniciado sesión el usuario {user}')
             request.session['usuarioLogueado'] = user
+            usuarioLoguear = usuario.objects.get(nombreUsuario=user)
+            usuarioLoguear.logueado = 1
+            usuarioLoguear.save()
+            contexto = {"usuarioLogueado":usuarioLogueado}
+            return redirect('/',contexto)
         else:
             messages.success(request, 'Los datos ingresados son inválidos, por favor intente nuevamente')
 
@@ -90,9 +95,12 @@ def login(request):
 
 # DESLOGUEAR USUARIO
 def salir(request):
+    usuarioLogueado = request.session['usuarioLogueado']
+    usuarioDesloguear = usuario.objects.get(nombreUsuario=usuarioLogueado)
+    usuarioDesloguear.logueado = 0
+    usuarioDesloguear.save()
     usuarioLogueado = ""
     request.session['usuarioLogueado'] = ""
-    usuarioLogueado = request.session['usuarioLogueado']
     contexto = {"usuarioLogueado":usuarioLogueado}
     return redirect('/login',contexto)
 
@@ -122,8 +130,17 @@ def mantenedorUsuarios(request):
 
 # ELIMINAR USUARIO
 def eliminarUsuario(request, id):
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
     usuarioEliminar = usuario.objects.get(id=id)
-    usuarioEliminar.delete()
+    if usuarioEliminar.nombreUsuario == usuarioLogueado:
+        messages.success(request, f'No es posible eliminar al usuario {usuarioEliminar.nombreUsuario} porque se encuentra logueado. Por favor cierre la sesión e intente la eliminación nuevamente.')
+    else:
+        usuarioEliminar.delete()
     return redirect('/mantenedorUsuarios')
 
 # EDITAR USUARIO
@@ -139,11 +156,6 @@ def editarUsuario(request, id):
     try:
         pwd = request.GET["e_password"]
         print(pwd)
-        try:
-            suscripcion = str(request.GET["e_suscripcion"])
-        except:
-            suscripcion = 0
-        print(suscripcion)
         for i in pwd:
             if i == " ":
                 espacios += 1
@@ -153,11 +165,22 @@ def editarUsuario(request, id):
             messages.success(request, 'Por favor elimine los espacios')
         else:
             usuarioEditar.password = pwd
-            usuarioEditar.suscripcion = suscripcion
             usuarioEditar.save()
-            messages.success(request, 'Usuario modificado')
+            messages.success(request, f'{usuarioEditar.nombreUsuario} modificado')
+            usuarioEditar = []
     except:
-        print("Error")
+        print("Error pwd")
+    
+    try:
+        suscripcion = str(request.GET["e_suscripcion"])
+        print(suscripcion)
+        usuarioEditar.suscripcion = suscripcion
+        usuarioEditar.save()
+        messages.success(request, f'{usuarioEditar.nombreUsuario} modificado')
+        usuarioEditar = []
+    except:
+        print("Error suscripción")
+  
     contexto = {"usuarioEditar":usuarioEditar,
                 "usuarioLogueado":usuarioLogueado}
     return render(request, "editarUsuario.html", contexto)

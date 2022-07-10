@@ -8,6 +8,12 @@
     </div>
 </section>
 
+{% for m in messages %}
+<div style="text-align: center;">
+  {{ m }}
+</div>
+{% endfor %}
+
 <section class="container-fluid" style="padding: 20px;">
     <div class="table-responsive">
         <table class="table table-sm">
