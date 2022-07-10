@@ -1,0 +1,51 @@
+{% extends "plantilla.html" %}
+{% load static %}
+{% block content %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 style="text-align: center; margin: 30px; background-color: E9C46A;">
+                        Gracias a tu ayuda, día a día podemos regalar plantas a los colegios de Chile
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 d-none d-md-block">
+                  <div class="d-flex center justify-content-center">
+                      <img src="{% static 'img/plantas_2.jpg' %}" alt="">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form5Example2"><br>Nombre y apellido</label>
+                        <input type="email" id="form5Example2" class="form-control" />
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form5Example2">Correo electrónico</label>
+                        <input type="email" id="form5Example2" class="form-control" />
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form5Example2">Teléfono</label>
+                        <input type="email" id="form5Example2" class="form-control" />
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form5Example2">Monto donación</label>
+                        <input type="email" id="form5Example2" class="form-control" />
+                    </div>
+                    <div class="d-flex center justify-content-center">
+                      <button type="submit" class="btn btn-primary mb-4 btn-lg" style="width: 150px; background-color: #2A9D8F; border-color: #2A9D8F;">
+                        Webpay
+                      </button>
+                    </div>
+                    <div class="d-flex center justify-content-center">
+                      <button type="submit" class="btn btn-primary mb-4 btn-lg" style="width: 150px; background-color: #2A9D8F; border-color: #2A9D8F;">
+                        Transferencia
+                      </button>
+                    </div>
+                </div>
+
+
+        </div>
+
+{% endblock %}

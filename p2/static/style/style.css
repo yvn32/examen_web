@@ -1,0 +1,136 @@
+.img_plant {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+    justify-content: end;	
+}
+.text_entry{
+    background-color: white;
+    color: #E76F51;
+    margin: 0 auto;
+    border-radius: 30px 30px 0 0;
+    padding: 0 20px;
+    max-width: 600px;
+}
+.front-image1 {
+    background-image: url(https://media.admagazine.com/photos/61de539e089751617cd2fc74/16:9/w_2560%2Cc_limit/plantas.jpg) ;
+    background-size: cover;
+    background-position: center;
+}
+.front-image2 {
+    background-image: url(https://www.clara.es/medio/2022/03/16/plantas-de-interior-bonitas_ad98ca6d_1280x720.jpg) ;
+    background-size: cover;
+    background-position: center;
+}
+.front-image3 {
+    background-image: url(https://www.hogarmania.com/archivos/202105/plantas-jovenes-de-interior-y-exterior-plantadecor-1280x720x80xX.jpg) ;
+    background-size: cover;
+    background-position: center;
+}
+.img_boby_1 {
+    width: 100%;
+}
+.planta_store_base {
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.planta_store_1{
+    background-image: url(https://www.elmueble.com/medio/2021/10/07/pilea-peperomioides_792ba786_900x1200.jpg);
+}
+.planta_store_2{
+    background-image: url(https://www.elmueble.com/medio/2021/10/07/crasas-en-maceta_00483489_550de896_800x1200.jpg);
+}
+.planta_store_3{
+    background-image: url(https://www.elmueble.com/medio/2021/10/07/tronco-de-brasil-pinterest_82f72121_1000x1500.jpg);
+}
+.planta_store_4{
+    background-image: url(https://www.elmueble.com/medio/2021/10/07/detalle-de-buganvilla-en-una-maceta-junto-a-la-ventana_4721eb59_979x1280.jpg);
+}
+.planta_store_5{
+    background-image: url(https://www.elmueble.com/medio/2019/03/27/adianthum_37d94a61_800x800.jpg);
+}
+.planta_store_6{
+    background-image: url(https://www.elmueble.com/medio/2019/03/27/ocimun-basilicum-albahaca-hoja-pequena_5d975e5e_800x800.jpg);
+}
+.c1_btn_inst{
+    background-color: #2A9D8F;
+}
+.img_tienda{
+    width: 100%;
+    height: 300px;
+    background-image: url(https://cdn.shopify.com/s/files/1/1881/4693/files/20181122-20181122-P1090601_1600x.jpg?v=1562892448);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-control-prev {
+    position: absolute;
+    top: 0;
+    top: 40%;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 45px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    /* opacity: .5; */
+    transition: opacity .15s ease;
+    background-color: #264653;
+    border-radius: 0 50px 50px 0;
+}
+.carousel-control-next {
+    position: absolute;
+    top: 0;
+    top: 40%;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 45px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    /* opacity: .5; */
+    transition: opacity .15s ease;
+    background-color: #264653;
+    border-radius: 50px 0 0 50px ;
+}
+.img_footer{
+    background-image: url(https://www.vanidades.com/__export/1641432952036/sites/vanidades/img/2022/01/05/como-cuidar-plantas-de-interior.jpg_172596871.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position:top;
+    background-repeat: no-repeat;
+}
+.card{
+    background-color: #2A9D8F;
+    color: white;
+}
+.blockquote-footer{
+    color: white;
+}
+.img_review{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.navbar-nav-scroll {
+    max-height: fit-content !important;
+}

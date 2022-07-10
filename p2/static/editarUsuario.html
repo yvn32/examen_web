@@ -1,0 +1,51 @@
+{% extends "plantilla.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row d-flex center justify-content-center">
+        <div class="col-12 col-lg-6 d-flex justify-content-center align-items-lg-center">
+          
+          <div>
+            <h1 class="w-100" style="text-align: center; margin-bottom: 10px; margin-top: 20px;">
+              Editar usuario             
+            </h1>
+            <h4 class="w-100" style="text-align: center; margin-bottom: 20px;">
+                {{ usuarioEditar.nombreUsuario }}
+            </h4>
+            <form class="d-flex flex-column" style="margin-bottom: 20px;" method="GET">
+              
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="e_password" class="form-control" id="exampleInputPassword1" placeholder= "{{usuarioEditar.Password}}" style="margin-bottom: 10px">
+
+              <div>
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1" style="margin-bottom: 20px;">
+                <label class="form-check-label" for="exampleRadios1">Suscripción</label>
+              </div>
+
+              {% for m in messages %}
+              <div style="text-align: center; margin-bottom: 15px;">
+                {{ m }}
+              </div>
+              {% endfor %}
+              
+              <button id="boton_editar" type="submit" class="btn" style="background-color: #2A9D8F; color: white; margin-bottom: 15px;">Confirmar edición</button>
+              <button id="boton_cancelar" type="reset" class="btn" style="background-color: #264653; color: white; margin-bottom: 15px;">Cancelar</button>            
+            </form>
+
+            <form action="/mantenedorUsuarios">
+                <button id="boton_cancelar" class="btn" style="background-color: #E76F51;; color: white;">Volver a mantenedor de usuarios</button>
+            </form>
+
+          </div>
+ 
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="d-flex center justify-content-center" style="margin-top: 20px;">
+            <img src="{% static 'img/planta5.jpg' %}" class="w-100 h-auto" alt="Planta" >
+          </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,437 @@
+{% extends "plantilla.html" %}
+{% load static %}
+{% block content %}
+
+  <div style="margin-top: 15px; margin-bottom: 15px; text-align: center;">
+    {% if msje != "" %}
+    <h6>{{ msje }}</h6>
+    {% endif %}
+  </div>
+
+  <section class="container-fluid">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="img_plant front-image1 row">
+            <div class="col-12 col-md-8 text_entry">
+              <h1 class="display-2">Llegaron nuevas plantas</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ducimus hic repellat, unde
+                debitis, similique cum optio voluptate impedit doloremque quaerat pariatur nemo nostrum. Cum
+                reprehenderit voluptas quam mollitia officiis.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img_plant front-image2 row">
+            <div class="col-12 col-md-8 text_entry">
+              <h1 class="display-2">Encuentra tu planta</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ducimus hic repellat, unde
+                debitis, similique cum optio voluptate impedit doloremque quaerat pariatur nemo nostrum. Cum
+                reprehenderit voluptas quam mollitia officiis.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img_plant front-image3 row">
+            <div class="col-12 col-md-8 text_entry ">
+              <h1 class="display-2">Llegaron nuevas plantas</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ducimus hic repellat, unde
+                debitis, similique cum optio voluptate impedit doloremque quaerat pariatur nemo nostrum. Cum
+                reprehenderit voluptas quam mollitia officiis.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  </section>
+  <!--Enterate-->
+  <section class="container mt-5">
+    <div class="row">
+      <div class="col-12 col-md-6 d-flex align-items-center">
+        <img
+          src= "https://media.architecturaldigest.com/photos/5dcde01c9f913a0008d4539a/master/w_1600,c_limit/Osofsky_Oct19-62.jpg"
+          alt="Imagen" class="img_boby_1">
+      </div>
+      <div class="col-12 col-md-6 align-self-center">
+        <div class="text-center">
+          <h2 class="display-5">Bienvenidos a nuestra tienda, enterate de nuestros servicio!</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum possimus vero voluptate omnis optio
+            nesciunt aspernatur accusamus! Fugit aliquam voluptatum laboriosam maxime vero. Deserunt unde dolorem velit
+            adipisci quisquam sit vitae? Odio voluptas ratione, fugiat impedit suscipit exercitationem ea quidem!.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <!--Productos-->
+  <section class="container">
+    <div class="row">
+      <h2 class="display-3 text-center my-5">Nuestros productos destacados</h2>
+    </div>
+    <div class="row">
+      <div id="carouselExampleInterval" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="d-flex flex-column flex-lg-row">
+              <div class="d-flex flex-row shadow rounded-3 overflow-hidden mb-3 mx-md-2">
+                <div class="planta_store_base planta_store_1"></div>
+                <div class="ps-2 py-3 py-3">
+                  <h5 class="card-title">Planta china del dinero</h5>
+                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+                    reprehenderit harum ad nemo nihil dolorum!</p>
+                  <button type="button" class="btn btn-primary c1_btn_inst">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-bag-plus" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z">
+                      </path>
+                      <path
+                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z">
+                      </path>
+                    </svg>
+                    Agregar al carro
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex flex-row shadow rounded-3 overflow-hidden mb-3 mx-md-2">
+                <div class="planta_store_base planta_store_2"></div>
+                <div class="ps-2 py-3">
+                  <h5 class="card-title">Planta china del dinero</h5>
+                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+                    reprehenderit harum ad nemo nihil dolorum!</p>
+                  <button type="button" class="btn btn-primary c1_btn_inst">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-bag-plus" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z">
+                      </path>
+                      <path
+                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z">
+                      </path>
+                    </svg>
+                    Agregar al carro
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex flex-row shadow rounded-3 overflow-hidden mb-3 mx-md-2">
+                <div class="planta_store_base planta_store_3"></div>
+                <div class="ps-2 py-3">
+                  <h5 class="card-title">Planta china del dinero</h5>
+                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+                    reprehenderit harum ad nemo nihil dolorum!</p>
+                  <button type="button" class="btn btn-primary c1_btn_inst">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-bag-plus" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z">
+                      </path>
+                      <path
+                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z">
+                      </path>
+                    </svg>
+                    Agregar al carro
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="d-flex flex-column flex-lg-row">
+              <div class="d-flex flex-row shadow rounded-3 overflow-hidden mb-3  mx-md-2">
+                <div class="planta_store_base planta_store_4"></div>
+                <div class="ps-2 py-3">
+                  <h5 class="card-title">Planta china del dinero</h5>
+                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+                    reprehenderit harum ad nemo nihil dolorum!</p>
+                  <button type="button" class="btn btn-primary c1_btn_inst">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-bag-plus" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z">
+                      </path>
+                      <path
+                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z">
+                      </path>
+                    </svg>
+                    Agregar al carro
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex flex-row shadow rounded-3 overflow-hidden  mb-3 mx-md-2">
+                <div class="planta_store_base planta_store_5"></div>
+                <div class="ps-2 py-3">
+                  <h5 class="card-title">Planta china del dinero</h5>
+                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+                    reprehenderit harum ad nemo nihil dolorum!</p>
+                  <button type="button" class="btn btn-primary c1_btn_inst">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-bag-plus" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z">
+                      </path>
+                      <path
+                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z">
+                      </path>
+                    </svg>
+                    Agregar al carro
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex flex-row shadow rounded-3 overflow-hidden mb-3  mx-md-2">
+                <div class="planta_store_base planta_store_6"></div>
+                <div class="ps-2 py-3">
+                  <h5 class="card-title">Planta china del dinero</h5>
+                  <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
+                    reprehenderit harum ad nemo nihil dolorum!</p>
+                  <button type="button" class="btn btn-primary c1_btn_inst">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-bag-plus" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z">
+                      </path>
+                      <path
+                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z">
+                      </path>
+                    </svg>
+                    Agregar al carro
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev btn_inst" type="button" data-bs-target="#carouselExampleInterval"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  <!--Imagen Tienda-->
+  <section class="container-fluid">
+    <div class="img_tienda my-3"></div>
+  </section>
+    <!--Imagen y reviews-->
+    <section class="container mb-4">
+      <div class="row">
+          <div class="col-8 mx-auto">
+              <div class="text-center mt-4">
+                  <h3 class="display-3">Nuestra historia</h3>
+                  <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero fuga tenetur esse ipsum
+                      omnis est
+                      rerum recusandae quis velit distinctio, sequi officiis error delectus. Saepe suscipit dolor aut
+                      dolores
+                      ratione?</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="row mt-5 ">
+          <div class="col-12 col-lg-6  align-self-center mb-3 mb-lg-0">
+              <img src="https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fit,w_696,h_549/test%2Ffd884c57016763a647f83e5dbbe41c95fcf3fea3"
+                  class="w-100 rounded" alt="Imagne persona en tienda">
+          </div>
+          <div class="col-12 col-lg-6 align-self-center">
+              <div class="container">
+                  <div class="row g-2">
+                      <div class="col-12 col-lg-6">
+                          <div
+                              class="d-flex flex-column align-items-center text-center bg-light shadow-lg text-black p-3 rounded-3">
+                              <img src="{% static 'img\Rectangle 45.png' %}" alt="" class="img_review shadow">
+                              <div class="">
+                                  <h5 class=" ">Julieta Venegas</h5>
+                              </div>
+                              <div class="px-2 py-1 mb-2 " style="background-color: #2A9D8F; border-radius: 50px;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                              </div>
+                              <i class="" style="font-size: 15px;">
+                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse eveniet consectetur.
+                              </i>
+                          </div>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                          <div
+                              class="d-flex flex-column align-items-center text-center bg-light shadow-lg text-black p-3 rounded-3">
+                              <img src="{% static 'img\Rectangle 46.png' %}" alt="" class="img_review shadow">
+                              <div class="">
+                                  <h5 class=" ">Jeanne Baret</h5>
+                              </div>
+                              <div class="px-2 py-1 mb-2 " style="background-color: #2A9D8F; border-radius: 50px;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                              </div>
+                              <i class="" style="font-size: 15px;">
+                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse eveniet consectetur.
+                              </i>
+                          </div>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                          <div
+                              class="d-flex flex-column align-items-center text-center bg-light shadow-lg text-black p-3 rounded-3">
+                              <img src="{% static 'img\Rectangle 48.png' %}" alt="" class="img_review shadow">
+                              <div class="">
+                                  <h5 class=" ">Stefano Mancuso</h5>
+                              </div>
+                              <div class="px-2 py-1 mb-2 " style="background-color: #2A9D8F; border-radius: 50px;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                              </div>
+                              <i class="" style="font-size: 15px;">
+                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse eveniet consectetur.
+                              </i>
+                          </div>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                          <div
+                              class="d-flex flex-column align-items-center text-center bg-light shadow-lg text-black p-3 rounded-3">
+                              <img src="{% static 'img\Rectangle 47.png' %}" alt="" class="img_review shadow">
+                              <div class="">
+                                  <h5 class=" ">Charles Darwin</h5>
+                              </div>
+                              <div class="px-2 py-1 mb-2 " style="background-color: #2A9D8F; border-radius: 50px;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"
+                                      class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z">
+                                      </path>
+                                  </svg>
+                              </div>
+                              <i class="" style="font-size: 15px;">
+                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse eveniet consectetur.
+                              </i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+  </section>
+
+
+{% endblock %}

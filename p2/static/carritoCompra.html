@@ -1,0 +1,110 @@
+{% extends "plantilla.html" %}
+{% load static %}
+{% block content %}
+
+  <section class="container mb-4">
+    <div class="row">
+      <h1 class="text-center display-2">Tu carrito de compras</h1>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-10 justify-content-center d-flex mt-3 mx-auto">
+        <div class="d-flex flex-column flex-lg-row align-items-center p-3 shadow-lg rounded-3">
+          <div style="background-image: url(https://www.elmueble.com/medio/2021/10/07/crasas-en-maceta_00483489_550de896_800x1200.jpg);
+          width: 100px;
+          height: 100px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 100px;
+          ">
+          </div>
+          <div class="ms-3">
+            <h4>Nombre de la planta</h4>
+            <p>Descripción de la planta</p>
+          </div>
+          <div class="ms-3 mx-2 d-flex align-items-center" style="border: #2A9D8F solid 1px; border-radius: 15px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2A9D8F"
+              class="bi bi-chevron-left ms-2" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z">
+              </path>
+            </svg>
+            <h5 class="p-0 m-0 px-3 py-2 fs-5" style="color:#2A9D8F;">Cantidad2</h5>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2A9D8F"
+              class="bi bi-chevron-right me-2" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+              </path>
+            </svg>
+          </div>
+          <p class="p-0 m-0 fs-2">$5.490</p>
+          <div class=" d-flex flex-column align-items-center  ms-3">
+            <div style="border: #2A9D8F 1px solid; border-radius: 50px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2A9D8F" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+            </svg></div>
+            <i>Eliminar</i>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-10 justify-content-center d-flex mt-3 mx-auto">
+        <div class="d-flex flex-column flex-lg-row align-items-center p-3 shadow-lg rounded-3">
+          <div style="background-image: url(https://www.elmueble.com/medio/2021/10/07/pilea-peperomioides_792ba786_900x1200.jpg);
+          width: 100px;
+          height: 100px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 100px;
+          ">
+          </div>
+          <div class="ms-3">
+            <h4>Nombre de la planta</h4>
+            <p>Descripción de la planta</p>
+          </div>
+          <div class="ms-3 mx-2 d-flex align-items-center" style="border: #2A9D8F solid 1px; border-radius: 15px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2A9D8F"
+              class="bi bi-chevron-left ms-2" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z">
+              </path>
+            </svg>
+            <h5 class="p-0 m-0 px-3 py-2 fs-5" style="color:#2A9D8F;">Cantidad1</h5>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2A9D8F"
+              class="bi bi-chevron-right me-2" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+              </path>
+            </svg>
+          </div>
+          <p class="p-0 m-0 fs-2">$9.490</p>
+          <div class=" d-flex flex-column align-items-center  ms-3">
+            <div style="border: #2A9D8F 1px solid; border-radius: 50px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#2A9D8F" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+            </svg></div>
+            <i>Eliminar</i>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-10 col-lg-10 justify-content-center d-flex mt-3 mx-auto">
+        <div class="">
+          <div class="py-3 d-flex flex-column flex-lg-row align-items-center px-5 rounded-3" style="background-color: #2A9D8F;">
+
+            <div class="col-12 col-md-auto">
+              <label for="inputPassword2" class="visually-hidden"></label>
+              <input type="text" class="form-control" id="" placeholder="Codigo de descuento">
+            </div>
+              <button type="submit" style="background-color:#264653;" class="btn text-white">Aplicar</button>
+            <h4 class="fs-5 m-0 ms-3 text-white display-5 mt-4 mt-lg-0">Total: $33.990</h4>
+            <button type="button" style="background-color: #F4A261; border: 0;" class="btn btn-primary mt-4 mt-lg-0 ms-lg-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+<path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"></path>
+</svg>
+              Pagar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

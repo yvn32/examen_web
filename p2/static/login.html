@@ -1,0 +1,39 @@
+{% extends "plantilla.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row d-flex center justify-content-center">
+
+        <div class="col-12 col-lg-6">
+            <div class="d-flex center justify-content-center">
+              <img src="{% static 'img/planta3.jpg' %}" class="w-100 h-auto" alt="Planta" >
+            </div>
+          </div>
+
+        <div class="col-12 col-lg-6 d-flex justify-content-center align-items-lg-center">
+          
+          <div>
+            <h1 class="w-100" style="text-align: center; margin-bottom: 10px; margin-top: 20px;">
+                Inicio de sesión
+            </h1>
+            <form class="d-flex flex-column" style="margin-bottom: 20px;" method="GET">
+              <label for="exampleInputEmail1" class="form-label">Correo</label>
+              <input type="email" name="correo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese correo electrónico" style="margin-bottom: 10px;">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese contraseña" style="margin-bottom: 15px">
+              <button id="boton_login" class="btn" style="background-color: black; color: white;">Enviar</button>
+            </form>
+            {% for m in messages %}
+            <div style="text-align: center;">
+              {{ m }}
+            </div>
+            {% endfor %}
+  
+          </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "plantilla.html" %}
+{% load static %}
+{% block content %}
+
+        <div class="container">
+            <div class="row d-flex center justify-content-center">
+                <div class="col-12 col-lg-6 d-flex justify-content-center align-items-lg-center">
+                  
+                  <div>
+                    <h1 class="w-100" style="text-align: center; margin-bottom: 10px;">
+                      Rastrea tus encargos
+                    </h1>
+                    <form class="d-flex flex-column" style="margin-bottom: 20px;">
+                      <input class="form-control me-2" type="search" placeholder="Código de rastreo" aria-label="Search" id="codigoRastreo">
+                      <button class="btn btn-dark" type="submit" id="rastrear">Buscar pedido</button>
+                    </form>
+
+                    <h1 class="w-100" style="text-align: center; margin-bottom: 10px;">
+                      Revisa tu historial
+                    </h1>
+                    <form class="d-flex flex-column" style="margin-bottom: 20px;">
+                      <button class="btn btn-outline-dark" type="submit" id="historial">Ver historial de compras</button>
+                    </form>
+                    <form class="d-flex flex-column" style="margin-bottom: 20px;">
+                      <button class="btn btn-outline-dark" type="submit" id="ocultar">Ocultar historial de compras</button>
+                    </form>
+                  </div>
+                
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div class="d-flex center justify-content-center">
+                    <img src="{% static 'img/planta_card1.jpg' %}" class="w-100 h-auto" alt="Planta" >
+                  </div>
+                </div>
+            </div>
+
+            <section class="container mb-4" id="rastreado">
+
+              <div class="row">
+                <h1 class="w-100" style="text-align: center; margin-bottom: 10px;">
+                  Estado de tu pedido
+                </h1></div>
+
+              <div class="row" id="prodSeguimiento"> 
+                <!-- Aquí texto html reemplazado para mostrar seguimiento -->
+              </div>
+            </section>
+
+            <section class="container mb-4" id="vistaHistorial">
+
+              <div class="row">
+                <h1 class="w-100" style="text-align: center; margin-bottom: 10px;">
+                  Historial de compras
+                </h1></div>
+
+              <div class="row" id="prodHistorial">                
+                <!-- Aquí texto html reemplazado para mostrar historial-->
+              </div>
+            </section>
+
+
+            <div class="row">
+              <div class="col" style="text-align: center; font-size:larger;">
+                <h1 class="display-6" style="color: #F4A261; margin-top: 20px;">
+                  ¿Tienes dudas sobre el seguimiento de tus encargos?
+                </h1>
+                <p>
+                  Resuelve todas tus dudas sobre la entrega de pedidos
+                </p>
+              </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-12 col-md-4" style="margin-bottom: 10px;">
+                  <div class="d-flex center justify-content-center">
+                    <div class="card" style="width: 23rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">Dudas generales</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo, praesentium placeat.</p>
+                        <div class="d-flex center justify-content-center">
+                          <a href="#" class="btn btn-primary" style="background-color: #2A9D8F; border-color: #2A9D8F;">Más información</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4" style="margin-bottom: 10px;">
+                  <div class="d-flex center justify-content-center">
+                    <div class="card" style="width: 23rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">Estatus de paquetes</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo, praesentium placeat.</p>
+                        <div class="d-flex center justify-content-center">
+                          <a href="#" class="btn btn-primary" style="background-color: #2A9D8F; border-color: #2A9D8F;">Más información</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="d-flex center justify-content-center">
+                    <div class="card" style="width: 23rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">Sitios asociados</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo, praesentium placeat.</p>
+                        <div class="d-flex center justify-content-center">
+                          <a href="#" class="btn btn-primary" style="background-color: #2A9D8F; border-color: #2A9D8F;">Más información</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "plantilla.html" %}
+{% load static %}
+{% block content %}
+
+<section class="container-fluid">
+    <div>
+        <h1 class="w-100" style="text-align: center; margin-bottom: 25px; margin-top: 20px;">Mantenedor de usuarios</h1>
+    </div>
+</section>
+
+<section class="container-fluid" style="padding: 20px;">
+    <div class="table-responsive">
+        <table class="table table-sm">
+            <thead>
+            <tr>
+                <th scope="col">Id usuario</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Password</th>
+                <th scope="col">Suscripción</th>
+                <th scope="col">Logueado</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+            </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {% for u in usuarios %}
+                <tr>
+                    <th scope="row">{{u.id}}</th>
+                    <td>{{u.nombreUsuario}}</td>
+                    <td>{{u.password}}</td>
+                    <td>{{u.suscripcion}}</td>
+                    <td>{{u.logueado}}</td>
+                    <td>
+                        <a href="/eliminarUsuario/{{u.id}}">
+                            <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                        </a>
+                    </td>
+                    <td>
+                      <a href="/editarUsuario/{{u.id}}">
+                        <button type="button" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </a>
+                  </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}
