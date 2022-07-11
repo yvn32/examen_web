@@ -30,6 +30,8 @@ urlpatterns = [
     path('editarUsuario/<id>', views.editarUsuario),
     path('mantenedorProductos/', views.mantenedorProductos, name="mantenedorProductos"),
     path('eliminarProducto/<id>', views.eliminarProducto, name="eliminarProducto"),
+    path('ingresarProductos/', views.ingresarProductos, name="ingresarProductos"),
+    path('editarProductos/<pk>', views.editarProductos ,name="editarProductos"),
     path('seguimiento/', views.seguimiento, name="seguimiento"),
     path('donacion/', views.donacion, name="donacion"),
     path('carritoCompra/', views.carritoCompra, name="carritoCompra"),

@@ -1,8 +1,12 @@
-from django.http import HttpResponse
+from distutils.command.upload import upload
+import http
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Template, Context
 from django.shortcuts import render, redirect
+from basedatos import models
 from basedatos.models import producto, pedido, detallePedido, tipoPedido, estadoPedido, estadoEntrega, cliente, giro, proveedor, usuario
 from django.contrib import messages
+from p2.forms import productoForm
 
 # PÁGINA DE INICIO
 def inicio(request):
@@ -203,6 +207,46 @@ def eliminarProducto(request, id):
     productoEliminar = producto.objects.get(id=id)
     productoEliminar.delete()
     return redirect('/mantenedorProductos')
+
+# AGREGAR PRODUCTO
+def ingresarProductos (request):
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
+    submitted = False
+    form = productoForm
+    if request.method == "POST":
+        form = productoForm(request.POST)
+        print(form)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/mantenedorProductos?submitted=True')
+        else:
+            print("Formulario inválido")
+    return render(request, "ingresarProductos.html", {'form': form, 'submitted': submitted, 'usuarioLogueado':usuarioLogueado})
+
+# EDITAR PRODUCTO
+def editarProductos(request, pk):
+    usuarioLogueado = ""
+    try:
+        usuarioLogueado = request.session['usuarioLogueado']
+        print(usuarioLogueado)
+    except:
+        print('No se ha logueado ningún usuario')
+    producto_id = producto.objects.get(id=pk)
+    form = productoForm(instance=producto_id)
+
+    if request.method == "POST":
+        form = productoForm(request.POST, instance=producto_id)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/mantenedorProductos')
+    context = {'form':form,
+                'usuarioLogueado':usuarioLogueado}
+    return render(request, 'editarProductos.html', context)
 
 # PÁGINA DE PRODUCTOS
 def productos(request):
